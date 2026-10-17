@@ -1,771 +1,842 @@
 
+/* =========================================
+   ANIMEVERSE — GLOBAL STYLES
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    color: #191919;
+    font-family: Inter, Arial, sans-serif;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
 .app {
-  min-height: 100vh;
-  color: #191919;
-  background-color: #f7f0df;
-  background-image: radial-gradient(#d6cdbb 0.7px, transparent 0.7px);
-  background-size: 7px 7px;
+    min-height: 100vh;
+    color: #191919;
+    background-color: #f7f0df;
+    background-image: radial-gradient(#d6cdbb 0.7px, transparent 0.7px);
+    background-size: 7px 7px;
 }
 
 .section {
-  width: min(1200px, 90%);
-  margin: 0 auto;
-  padding: 56px 0;
+    width: min(1200px, 90%);
+    margin: 0 auto;
+    padding: 56px 0;
 }
 
 h1,
 h2,
 h3,
 p {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 h1,
 h2,
 h3 {
-  line-height: 1.12;
+    line-height: 1.12;
 }
 
 h1 {
-  font-size: clamp(2.5rem, 5vw, 4.8rem);
+    font-size: clamp(2.5rem, 5vw, 4.8rem);
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(2rem, 4vw, 3rem);
 }
 
 h2 span,
 .section-heading h1 span {
-  color: #7045c4;
+    color: #7045c4;
 }
 
 .eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  margin-bottom: 12px;
-  font-size: 0.8rem;
-  font-weight: 950;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 12px;
+    font-size: 0.8rem;
+    font-weight: 950;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
 }
+
+/* =========================================
+   HERO — DEMON SLAYER BACKGROUND
+========================================= */
+
 
 .hero {
-  position: relative;
-  isolation: isolate;
-  display: flex;
-  align-items: center;
-  min-height: 570px;
-  overflow: hidden;
-  padding: 70px 7%;
-  color: white;
-  background:
-    linear-gradient(90deg, rgba(12, 10, 22, 0.96), rgba(20, 12, 35, 0.64)),
-    url("https://cdn.myanimelist.net/images/anime/13/17405l.jpg")
-      center 35% / cover;
-  border-bottom: 5px solid #191919;
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    min-height: 570px;
+    overflow: hidden;
+    padding: 70px 7%;
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(12, 10, 22, 0.70),
+            rgba(20, 12, 35, 0.38),
+            rgba(20, 12, 35, 0.18)
+        ),
+        url("/demon-slayer.jpg") center 35% / cover;
+
+    border-bottom: 5px solid #191919;
 }
 
+
 .hero-glow {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  background: radial-gradient(circle at 75% 40%, #8a52d266, transparent 42%);
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+        circle at 75% 40%,
+        #8a52d266,
+        transparent 42%
+    );
 }
 
 .hero-content {
-  max-width: 650px;
+    position: relative;
+    z-index: 1;
+    max-width: 650px;
 }
 
 .hero h1 {
-  margin: 12px 0 20px;
-  font-weight: 1000;
-  letter-spacing: -2px;
-  text-shadow: 4px 4px 0 #000;
+    margin: 12px 0 20px;
+    font-weight: 1000;
+    letter-spacing: -2px;
+    line-height: 1.08;
+    overflow-wrap: break-word;
+    text-shadow: 4px 4px 0 #000;
 }
 
 .hero h1 span {
-  color: #f5c842;
+    color: #f5c842;
 }
 
 .hero-content > p {
-  max-width: 470px;
-  line-height: 1.7;
+    max-width: 470px;
+    line-height: 1.7;
+    text-shadow: 0 2px 5px #000;
+}
+
+.hero .eyebrow,
+.hero-stats {
+    text-shadow: 0 2px 5px #000;
 }
 
 .hero-buttons {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin: 26px 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 26px 0;
 }
 
 .primary-button,
 .secondary-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  min-height: 46px;
-  padding: 12px 18px;
-  border: 3px solid #191919;
-  border-radius: 6px;
-  font-weight: 900;
-  text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 46px;
+    padding: 12px 18px;
+    border: 3px solid #191919;
+    border-radius: 6px;
+    font-weight: 900;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
 }
 
 .primary-button {
-  color: #191919;
-  background: #f5c842;
-  box-shadow: 4px 4px 0 #191919;
+    color: #191919;
+    background: #f5c842;
+    box-shadow: 4px 4px 0 #191919;
 }
 
 .secondary-button {
-  color: #191919;
-  background: #fffaf0;
-  box-shadow: 4px 4px 0 #191919;
+    color: #191919;
+    background: #fffaf0;
+    box-shadow: 4px 4px 0 #191919;
 }
 
 .primary-button:hover,
 .secondary-button:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 #191919;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 #191919;
 }
 
 .hero .secondary-button {
-  color: white;
-  background: #7045c4;
-  border-color: #fff;
-  box-shadow: 4px 4px 0 #000;
+    color: white;
+    background: #7045c4;
+    border-color: #fff;
+    box-shadow: 4px 4px 0 #000;
 }
 
 .hero-stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin-top: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 35px;
 }
 
 .hero-stats div {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .hero-stats strong {
-  color: #f5c842;
-  font-size: 0.9rem;
+    color: #f5c842;
+    font-size: 0.9rem;
 }
 
 .hero-stats span {
-  font-size: 0.8rem;
-  opacity: 0.85;
+    font-size: 0.8rem;
+    opacity: 0.95;
 }
 
 .comic-stamp {
-  position: absolute;
-  right: 7%;
-  bottom: 90px;
-  padding: 20px;
-  transform: rotate(-9deg);
-  color: #191919;
-  background: #f5c842;
-  border: 4px solid #191919;
-  box-shadow: 6px 6px 0 #000;
-  font-size: 1.25rem;
-  font-weight: 1000;
-  text-align: center;
+    position: absolute;
+    z-index: 2;
+    right: 7%;
+    bottom: 90px;
+    max-width: 190px;
+    padding: 20px;
+    transform: rotate(-9deg);
+    color: #191919;
+    background: #f5c842;
+    border: 4px solid #191919;
+    box-shadow: 6px 6px 0 #000;
+    font-size: 1.25rem;
+    font-weight: 1000;
+    text-align: center;
 }
 
 .hero-caption {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 12px;
-  color: #191919;
-  background: #f5c842;
-  border-top: 3px solid #191919;
-  font-size: 0.75rem;
-  font-weight: 950;
-  letter-spacing: 2px;
-  text-align: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 12px;
+    color: #191919;
+    background: #f5c842;
+    border-top: 3px solid #191919;
+    font-size: 0.75rem;
+    font-weight: 950;
+    letter-spacing: 2px;
+    text-align: center;
 }
 
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
 .section-heading {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 18px;
-  margin-bottom: 28px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 28px;
 }
 
 .section-heading h1,
 .section-heading h2 {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 .section-note {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 0.8rem;
-  font-weight: 950;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.8rem;
+    font-weight: 950;
 }
 
+/* =========================================
+   ANIME AND MANGA CARD GRID
+========================================= */
+
 .anime-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 24px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
+    gap: 24px;
 }
 
 .anime-card {
-  min-width: 0;
-  overflow: hidden;
-  background: #fffaf0;
-  border: 3px solid #191919;
-  box-shadow: 6px 6px 0 #191919;
+    min-width: 0;
+    overflow: hidden;
+    background: #fffaf0;
+    border: 3px solid #191919;
+    box-shadow: 6px 6px 0 #191919;
 }
 
 .anime-image {
-  position: relative;
-  height: 285px;
-  overflow: hidden;
-  background: #d8c8f5;
-  border-bottom: 3px solid #191919;
+    position: relative;
+    height: 285px;
+    overflow: hidden;
+    background: #d8c8f5;
+    border-bottom: 3px solid #191919;
 }
 
 .anime-image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.35s;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s;
 }
 
 .anime-card:hover .anime-image img {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .card-genre {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  max-width: 75%;
-  padding: 7px 10px;
-  overflow: hidden;
-  color: #191919;
-  background: #f5c842;
-  border: 2px solid #191919;
-  font-size: 0.72rem;
-  font-weight: 900;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    max-width: 75%;
+    padding: 7px 10px;
+    overflow: hidden;
+    color: #191919;
+    background: #f5c842;
+    border: 2px solid #191919;
+    font-size: 0.72rem;
+    font-weight: 900;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .favorite-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: grid;
-  width: 39px;
-  height: 39px;
-  place-items: center;
-  color: #191919;
-  background: #fffaf0;
-  border: 2px solid #191919;
-  border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: grid;
+    width: 39px;
+    height: 39px;
+    place-items: center;
+    color: #191919;
+    background: #fffaf0;
+    border: 2px solid #191919;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 .favorite-button.favorited {
-  color: #e62f62;
-  background: #fff;
+    color: #e62f62;
+    background: #fff;
 }
 
 .anime-info {
-  padding: 17px;
+    padding: 17px;
 }
 
 .anime-info h3 {
-  margin-bottom: 10px;
-  font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    overflow-wrap: anywhere;
 }
 
 .anime-info p {
-  display: -webkit-box;
-  overflow: hidden;
-  margin-bottom: 12px;
-  color: #5e5a54;
-  font-size: 0.87rem;
-  line-height: 1.55;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+    display: -webkit-box;
+    overflow: hidden;
+    margin-bottom: 12px;
+    color: #5e5a54;
+    font-size: 0.87rem;
+    line-height: 1.55;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
 }
 
 .anime-info a {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  color: #5832a8;
-  font-weight: 900;
-  text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: #5832a8;
+    font-weight: 900;
+    text-decoration: none;
 }
 
 .anime-info a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
+/* =========================================
+   SEARCH AND EMPTY STATES
+========================================= */
+
 .search-box {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  max-width: 500px;
-  padding: 12px 16px;
-  background: #fffaf0;
-  border: 2px solid #191919;
-  border-radius: 8px;
-  box-shadow: 4px 4px 0 #191919;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 16px;
+    background: #fffaf0;
+    border: 2px solid #191919;
+    border-radius: 8px;
+    box-shadow: 4px 4px 0 #191919;
 }
 
 .search-box input {
-  width: 100%;
-  min-width: 0;
-  color: #191919;
-  background: transparent;
-  border: none;
-  outline: none;
+    width: 100%;
+    min-width: 0;
+    color: #191919;
+    background: transparent;
+    border: none;
+    outline: none;
 }
 
 .anime-search {
-  margin: 24px 0 32px;
+    margin: 24px 0 32px;
 }
 
 .empty-state {
-  padding: 24px;
-  text-align: center;
-  line-height: 1.6;
+    padding: 24px;
+    text-align: center;
+    line-height: 1.6;
 }
 
+/* =========================================
+   COMICS PANELS
+========================================= */
+
 .comic-panels {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
 }
 
 .comic-panel {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 18px;
-  min-height: 240px;
-  padding: 30px;
-  overflow: hidden;
-  color: #191919;
-  background: #f5c842;
-  border: 4px solid #191919;
-  box-shadow: 7px 7px 0 #191919;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 18px;
+    min-height: 240px;
+    padding: 30px;
+    overflow: hidden;
+    color: #191919;
+    background: #f5c842;
+    border: 4px solid #191919;
+    box-shadow: 7px 7px 0 #191919;
 }
 
 .comic-panel.panel-two {
-  background: #c9b4f4;
+    background: #c9b4f4;
 }
 
 .comic-panel span {
-  font-size: 0.8rem;
-  font-weight: 950;
-  letter-spacing: 1.5px;
+    font-size: 0.8rem;
+    font-weight: 950;
+    letter-spacing: 1.5px;
 }
 
 .comic-panel strong {
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  font-weight: 1000;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 1000;
 }
 
 .comic-panel a {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  color: #191919;
-  font-weight: 900;
-  text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #191919;
+    font-weight: 900;
+    text-decoration: none;
 }
+
+/* =========================================
+   HOME WATCHLIST AND COMICS NOTES
+========================================= */
 
 .home-watchlist-link,
 .comics-reader-note {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 30px;
-  padding: 20px;
-  background: #fffaf0;
-  border: 3px solid #191919;
-  box-shadow: 4px 4px 0 #191919;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+    padding: 20px;
+    background: #fffaf0;
+    border: 3px solid #191919;
+    box-shadow: 4px 4px 0 #191919;
 }
 
 .home-watchlist-link p,
 .comics-reader-note p {
-  margin: 0;
+    margin: 0;
 }
 
 .home-watchlist-link a {
-  margin-left: auto;
-  color: #5832a8;
-  font-weight: 900;
+    margin-left: auto;
+    color: #5832a8;
+    font-weight: 900;
 }
 
 .comics-intro {
-  line-height: 1.7;
+    line-height: 1.7;
 }
 
 .comics-reader-note {
-  margin-bottom: 25px;
+    margin-bottom: 25px;
 }
 
 .comics-reader-note p {
-  margin-top: 5px;
-  color: #5e5a54;
+    margin-top: 5px;
+    color: #5e5a54;
 }
 
+/* Saved manga counter and Watchlist link */
+.manga-wishlist-shortcut {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 0 0 22px;
+    line-height: 1.6;
+}
+
+.manga-saved-count {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 6px;
+}
+
+.manga-saved-count svg {
+    flex-shrink: 0;
+}
+
+.manga-saved-count strong {
+    margin-left: 3px;
+}
+
+.manga-wishlist-shortcut a {
+    display: inline-block;
+    margin: 0;
+    padding: 4px 0;
+    color: #5832a8;
+    font-weight: 800;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* =========================================
+   WATCHLIST
+========================================= */
+
 .watchlist-page {
-  min-height: 65vh;
+    min-height: 65vh;
+    padding-top: 48px;
+    padding-bottom: 70px;
+}
+
+.watchlist-section {
+    margin-top: 60px;
+}
+
+.watchlist-section + .watchlist-section {
+    margin-top: 64px;
+    padding-top: 42px;
+    border-top: 3px dashed #b8a98e;
+}
+
+.watchlist-section .section-heading {
+    margin-bottom: 32px;
+}
+
+.watchlist-section .anime-grid {
+    row-gap: 36px;
+    column-gap: 28px;
+}
+
+.watchlist-section .anime-card {
+    align-self: start;
+    margin-bottom: 4px;
+}
+
+.watchlist-section .anime-info {
+    padding: 18px;
+}
+
+.watchlist-section .watchlist-actions {
+    gap: 12px;
+    margin-top: 16px;
 }
 
 .watchlist-empty {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  padding: 70px 20px;
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 70px 20px;
+    text-align: center;
 }
 
 .watchlist-empty h2,
 .watchlist-empty p {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 .watchlist-empty p {
-  line-height: 1.6;
+    line-height: 1.6;
 }
 
 .watchlist-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
 }
 
 .remove-favorite {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 7px 9px;
-  color: #b4233b;
-  background: transparent;
-  border: 1px solid #b4233b;
-  border-radius: 5px;
-  font-size: 0.8rem;
-  font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 9px;
+    color: #b4233b;
+    background: transparent;
+    border: 1px solid #b4233b;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    cursor: pointer;
 }
 
 .watchlist-hint {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 7px;
-  margin-top: 30px;
-}
-
-.watchlist-hint a {
-  color: #5832a8;
-  font-weight: 900;
-}
-
-.site-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 15px;
-  padding: 26px 5%;
-  background: #f5c842;
-  border-top: 4px solid #191919;
-}
-
-.site-footer .logo {
-  color: #191919;
-  font-size: 1.2rem;
-  font-weight: 950;
-  text-decoration: none;
-}
-
-.site-footer .logo span {
-  color: #5832a8;
-}
-
-.site-footer p {
-  margin: 0;
-}
-
-.not-found {
-  min-height: 60vh;
-}
-
-@media (max-width: 1000px) {
-  .anime-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .anime-image {
-    height: 260px;
-  }
-
-  .comic-stamp {
-    right: 4%;
-    bottom: 80px;
-  }
-}
-
-@media (max-width: 700px) {
-  .section {
-    width: 92%;
-    padding: 38px 0;
-  }
-
-  .hero {
-    min-height: 620px;
-    padding: 50px 6%;
-    background-position: 60% center;
-  }
-
-  .hero h1 {
-    letter-spacing: -1px;
-  }
-
-  .hero-stats {
-    gap: 18px;
-  }
-
-  .comic-stamp {
-    right: 18px;
-    bottom: 65px;
-    padding: 12px;
-    font-size: 0.85rem;
-  }
-
-  .anime-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
-  }
-
-  .anime-image {
-    height: 230px;
-  }
-
-  .anime-info {
-    padding: 12px;
-  }
-
-  .comic-panels {
-    grid-template-columns: 1fr;
-  }
-
-  .home-watchlist-link {
-    align-items: flex-start;
-  }
-
-  .home-watchlist-link a {
-    margin-left: 0;
-  }
-}
-
-@media (max-width: 420px) {
-  .anime-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .anime-image {
-    height: 320px;
-  }
-
-  .hero-buttons {
-    align-items: stretch;
-    flex-direction: column;
-  }
-
-  .hero-buttons > * {
-    width: 100%;
-  }
-}
-
-/* Watchlist spacing improvements */
-.watchlist-page {
-  padding-top: 48px;
-  padding-bottom: 70px;
-}
-
-.watchlist-section {
-  margin-top: 60px;
-}
-
-.watchlist-section + .watchlist-section {
-  margin-top: 64px;
-  padding-top: 42px;
-  border-top: 3px dashed #b8a98e;
-}
-
-.watchlist-section .section-heading {
-  margin-bottom: 32px;
-}
-
-.watchlist-section .anime-grid {
-  row-gap: 36px;
-  column-gap: 28px;
-}
-
-.watchlist-section .anime-card {
-  align-self: start;
-  margin-bottom: 4px;
-}
-
-.watchlist-section .anime-info {
-  padding: 18px;
-}
-
-.watchlist-section .watchlist-actions {
-  margin-top: 16px;
-  gap: 12px;
-}
-
-@media (max-width: 700px) {
-  .watchlist-section {
-    margin-top: 44px;
-  }
-
-  .watchlist-section + .watchlist-section {
-    margin-top: 48px;
-    padding-top: 32px;
-  }
-
-  .watchlist-section .anime-grid {
-    row-gap: 28px;
-    column-gap: 18px;
-  }
-}
-
-/* AnimeVerse background music control */
-.anime-music-toggle {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 12px 16px;
-  color: #fff;
-  background: #241238;
-  border: 2px solid #a855f7;
-  border-radius: 30px;
-  box-shadow: 0 0 18px #8b2cff55;
-  font-weight: 800;
-  cursor: pointer;
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease;
-}
-
-.anime-music-toggle:hover {
-  background: #7028c8;
-  transform: translateY(-2px);
-}
-
-.anime-music-toggle:active {
-  transform: scale(0.97);
-}
-
-@media (max-width: 600px) {
-  .anime-music-toggle {
-    right: 12px;
-    bottom: 12px;
-    padding: 10px 12px;
-    font-size: 12px;
-  }
-}
-
-/* Comics page layout fix */
-.comics-page {
-    width: min(1200px, 92%);
-    margin: 0 auto;
-    padding: 48px 0 70px;
-}
-
-.comics-page .section-heading {
-    align-items: flex-end;
-    margin-bottom: 24px;
-}
-
-.comics-page .section-heading h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    line-height: 1.1;
-}
-
-.comics-page .comics-intro {
-    margin: 18px 0;
-    line-height: 1.7;
-}
-
-.comics-page .search-box {
-    margin: 20px 0 24px;
-}
-
-.comics-page .watchlist-hint {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 30px;
+}
+
+.watchlist-hint a {
+    color: #5832a8;
+    font-weight: 900;
+}
+
+/* =========================================
+   NAVBAR LOGO AND FOOTER
+========================================= */
+
+.site-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 26px 5%;
+    background: #f5c842;
+    border-top: 4px solid #191919;
+}
+
+.site-footer .logo {
+    color: #191919;
+    font-size: 1.2rem;
+    font-weight: 950;
+    text-decoration: none;
+}
+
+.site-footer .logo span {
+    color: #5832a8;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+.not-found {
+    min-height: 60vh;
+}
+
+/* =========================================
+   OPTIONAL MUSIC TOGGLE STYLING
+========================================= */
+
+.anime-music-toggle {
+    position: fixed;
+    z-index: 1000;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 8px;
-    margin: 0 0 20px;
+    padding: 12px 16px;
+    color: #fff;
+    background: #241238;
+    border: 2px solid #a855f7;
+    border-radius: 30px;
+    box-shadow: 0 0 18px #8b2cff55;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
 }
 
-/* Manga cards */
-.comics-page .anime-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 24px;
-    align-items: start;
+.anime-music-toggle:hover {
+    background: #7028c8;
+    transform: translateY(-2px);
 }
 
-.comics-page .anime-card {
-    min-width: 0;
-    width: 100%;
+.anime-music-toggle:active {
+    transform: scale(0.97);
 }
 
-.comics-page .anime-image {
-    height: 260px;
-}
+/* =========================================
+   TABLET
+========================================= */
 
-.comics-page .anime-info {
-    overflow-wrap: anywhere;
-}
+@media (max-width: 1000px) {
+    .anime-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 
-/* Tablet */
-@media (max-width: 900px) {
+    .anime-image {
+        height: 260px;
+    }
+
+    .comic-stamp {
+        right: 4%;
+        bottom: 80px;
+    }
+
     .comics-page .anime-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 18px;
     }
 }
 
-/* Mobile */
-@media (max-width: 650px) {
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+    .section {
+        width: 92%;
+        padding: 38px 0;
+    }
+
+    .hero {
+        min-height: 620px;
+        padding: 50px 6%;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.1rem, 8vw, 3.2rem);
+        letter-spacing: -1px;
+    }
+
+    .hero-content > p {
+        max-width: 100%;
+        font-size: 1rem;
+    }
+
+    .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 28px;
+    }
+
+    .hero-stats div {
+        min-width: 0;
+    }
+
+    .hero-stats strong {
+        font-size: 0.8rem;
+        overflow-wrap: anywhere;
+    }
+
+    .hero-stats span {
+        font-size: 0.72rem;
+        line-height: 1.4;
+    }
+
+    .comic-stamp {
+        right: 16px;
+        bottom: 65px;
+        max-width: 145px;
+        padding: 10px 12px;
+        font-size: 0.75rem;
+    }
+
+    .hero-caption {
+        padding: 10px 5px;
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+    }
+
+    .anime-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .anime-image {
+        height: 230px;
+    }
+
+    .anime-info {
+        padding: 12px;
+    }
+
+    .comic-panels {
+        grid-template-columns: 1fr;
+    }
+
+    .home-watchlist-link {
+        align-items: flex-start;
+    }
+
+    .home-watchlist-link a {
+        margin-left: 0;
+    }
+
+    .watchlist-section {
+        margin-top: 44px;
+    }
+
+    .watchlist-section + .watchlist-section {
+        margin-top: 48px;
+        padding-top: 32px;
+    }
+
+    .watchlist-section .anime-grid {
+        row-gap: 28px;
+        column-gap: 18px;
+    }
+
     .comics-page {
         padding: 32px 0 50px;
     }
@@ -786,10 +857,60 @@ h2 span,
     .comics-page .anime-info {
         padding: 12px;
     }
+
+    .anime-music-toggle {
+        right: 12px;
+        bottom: 12px;
+        padding: 10px 12px;
+        font-size: 12px;
+    }
 }
 
-/* Very small phones */
-@media (max-width: 380px) {
+/* =========================================
+   SMALL MOBILE PHONES
+========================================= */
+
+@media (max-width: 420px) {
+    .hero {
+        min-height: 650px;
+        padding: 42px 6% 125px;
+        background-position: center center;
+    }
+
+    .hero h1 {
+        font-size: clamp(2rem, 8.5vw, 2.6rem);
+    }
+
+    .hero-buttons {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-buttons > * {
+        width: 100%;
+    }
+
+    .hero-stats {
+        gap: 8px;
+    }
+
+    .comic-stamp {
+        right: 14px;
+        bottom: 55px;
+        max-width: 125px;
+        padding: 9px;
+        font-size: 0.68rem;
+    }
+
+    .anime-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .anime-image {
+        height: 320px;
+    }
+
     .comics-page .anime-grid {
         grid-template-columns: 1fr;
     }
@@ -797,82 +918,4 @@ h2 span,
     .comics-page .anime-image {
         height: 300px;
     }
-}
-
-
-/* Fix spacing in the saved manga row */
-.comics-page .saved-manga-row {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 0 0 20px;
-    line-height: 1.6;
-}
-
-.comics-page .saved-manga-row a {
-    margin-left: 4px;
-    white-space: nowrap;
-}
-
-.comics-page .saved-manga-row svg {
-    flex-shrink: 0;
-}
-
-/* Fix spacing for the saved manga counter and link */
-.manga-wishlist-shortcut {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 0 0 22px;
-    line-height: 1.6;
-}
-
-.manga-wishlist-shortcut svg {
-    flex-shrink: 0;
-}
-
-.manga-wishlist-shortcut span {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.manga-wishlist-shortcut strong {
-    margin-left: 3px;
-}
-
-.manga-wishlist-shortcut a {
-    display: inline-block;
-    margin-left: 4px;
-    color: #5832a8;
-    font-weight: 800;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-}
-
-.manga-wishlist-shortcut {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin: 0 0 22px;
-}
-
-.manga-saved-count {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    flex-shrink: 0;
-}
-
-.manga-wishlist-shortcut a {
-    display: inline-block;
-    margin: 0;
-    padding: 4px 0;
-    color: #5832a8;
-    font-weight: 800;
-    text-decoration: underline;
-    text-underline-offset: 3px;
 }
