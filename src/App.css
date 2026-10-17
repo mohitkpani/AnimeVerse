@@ -700,3 +700,101 @@ h2 span,
     font-size: 12px;
   }
 }
+```css
+/* Comics page layout fix */
+.comics-page {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+    padding: 48px 0 70px;
+}
+
+.comics-page .section-heading {
+    align-items: flex-end;
+    margin-bottom: 24px;
+}
+
+.comics-page .section-heading h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+}
+
+.comics-page .comics-intro {
+    margin: 18px 0;
+    line-height: 1.7;
+}
+
+.comics-page .search-box {
+    margin: 20px 0 24px;
+}
+
+.comics-page .watchlist-hint {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 20px;
+}
+
+/* Manga cards */
+.comics-page .anime-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+.comics-page .anime-card {
+    min-width: 0;
+    width: 100%;
+}
+
+.comics-page .anime-image {
+    height: 260px;
+}
+
+.comics-page .anime-info {
+    overflow-wrap: anywhere;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .comics-page .anime-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+    .comics-page {
+        padding: 32px 0 50px;
+    }
+
+    .comics-page .section-heading {
+        align-items: flex-start;
+    }
+
+    .comics-page .anime-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .comics-page .anime-image {
+        height: 220px;
+    }
+
+    .comics-page .anime-info {
+        padding: 12px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+    .comics-page .anime-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .comics-page .anime-image {
+        height: 300px;
+    }
+}
