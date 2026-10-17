@@ -124,11 +124,15 @@ function Comics() {
                 />
             </label>
 
+            {/* Saved manga count and Watchlist link */}
             <div className="manga-wishlist-shortcut">
-                <Heart size={19} />
-                <span>
-                    Saved manga: <strong>{favorites.length}</strong>
-                </span>
+                <div className="manga-saved-count">
+                    <Heart size={19} />
+                    <span>
+                        Saved manga: <strong>{favorites.length}</strong>
+                    </span>
+                </div>
+
                 <Link to="/watchlist">View Watchlist</Link>
             </div>
 
@@ -149,7 +153,9 @@ function Comics() {
             )}
 
             {!loading && !error && mangaList.length === 0 && (
-                <p className="empty-state">No manga found. Try another title.</p>
+                <p className="empty-state">
+                    No manga found. Try another title.
+                </p>
             )}
 
             {!loading && !error && (
@@ -165,7 +171,9 @@ function Comics() {
                                 key={manga.id}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: Math.min(index * 0.04, 0.4) }}
+                                transition={{
+                                    delay: Math.min(index * 0.04, 0.4),
+                                }}
                                 whileHover={{ y: -7 }}
                             >
                                 <div className="anime-image">
@@ -177,7 +185,9 @@ function Comics() {
                                         />
                                     )}
 
-                                    <span className="card-genre">{manga.type}</span>
+                                    <span className="card-genre">
+                                        {manga.type}
+                                    </span>
 
                                     <button
                                         className={`favorite-button ${isFavorite ? "favorited" : ""
@@ -196,7 +206,11 @@ function Comics() {
                                     >
                                         <Heart
                                             size={19}
-                                            fill={isFavorite ? "currentColor" : "none"}
+                                            fill={
+                                                isFavorite
+                                                    ? "currentColor"
+                                                    : "none"
+                                            }
                                         />
                                     </button>
                                 </div>

@@ -700,7 +700,7 @@ h2 span,
     font-size: 12px;
   }
 }
-```css
+
 /* Comics page layout fix */
 .comics-page {
     width: min(1200px, 92%);
@@ -846,6 +846,31 @@ h2 span,
 .manga-wishlist-shortcut a {
     display: inline-block;
     margin-left: 4px;
+    color: #5832a8;
+    font-weight: 800;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.manga-wishlist-shortcut {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 0 0 22px;
+}
+
+.manga-saved-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.manga-wishlist-shortcut a {
+    display: inline-block;
+    margin: 0;
+    padding: 4px 0;
     color: #5832a8;
     font-weight: 800;
     text-decoration: underline;
