@@ -798,3 +798,56 @@ h2 span,
         height: 300px;
     }
 }
+
+
+/* Fix spacing in the saved manga row */
+.comics-page .saved-manga-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 20px;
+    line-height: 1.6;
+}
+
+.comics-page .saved-manga-row a {
+    margin-left: 4px;
+    white-space: nowrap;
+}
+
+.comics-page .saved-manga-row svg {
+    flex-shrink: 0;
+}
+
+/* Fix spacing for the saved manga counter and link */
+.manga-wishlist-shortcut {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 22px;
+    line-height: 1.6;
+}
+
+.manga-wishlist-shortcut svg {
+    flex-shrink: 0;
+}
+
+.manga-wishlist-shortcut span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.manga-wishlist-shortcut strong {
+    margin-left: 3px;
+}
+
+.manga-wishlist-shortcut a {
+    display: inline-block;
+    margin-left: 4px;
+    color: #5832a8;
+    font-weight: 800;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
