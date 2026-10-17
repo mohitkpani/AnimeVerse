@@ -1,0 +1,61 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#17092e"/>
+      <stop offset="100%" stop-color="#050510"/>
+    </linearGradient>
+    <linearGradient id="hair" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff176"/>
+      <stop offset="48%" stop-color="#ff9800"/>
+      <stop offset="100%" stop-color="#f44336"/>
+    </linearGradient>
+    <linearGradient id="energy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f9a8d4"/>
+      <stop offset="50%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#67e8f9"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="64" height="64" rx="15" fill="url(#bg)"/>
+  <circle cx="43" cy="22" r="15" fill="#7c3aed" opacity=".35"/>
+  <circle cx="43" cy="22" r="11" fill="none"
+          stroke="#d8b4fe" stroke-width="1.5" opacity=".8"/>
+
+  <!-- Spiky orange ninja hair -->
+  <path d="M12 28 L7 14 L19 19 L19 7 L29 15
+           L37 5 L40 17 L51 11 L49 25
+           L43 34 L17 36 Z"
+        fill="url(#hair)" stroke="#ffcc66" stroke-width="1"/>
+
+  <!-- Head and face -->
+  <path d="M17 25 L43 24 L40 43 L30 51 L19 42 Z"
+        fill="#f7bd91" stroke="#351b39" stroke-width="2"/>
+
+  <!-- Ninja forehead protector -->
+  <path d="M14 23 L44 21 L43 29 L15 31 Z"
+        fill="#303448" stroke="#cbd5e1" stroke-width="1.5"/>
+  <path d="M27 23 L34 22 L36 27 L31 30 L26 27 Z"
+        fill="none" stroke="#e5e7eb" stroke-width="1.5"/>
+  <path d="M29 24 L32 27 L29 28"
+        fill="none" stroke="#e5e7eb" stroke-width="1.2"/>
+
+  <!-- Eyes and whisker marks -->
+  <path d="M19 35 L27 34 L24 38 Z" fill="#24152d"/>
+  <circle cx="23" cy="36" r="1.4" fill="#f97316"/>
+  <path d="M20 41 L27 40 M20 44 L26 43 M34 41 L40 40"
+        stroke="#9f3b31" stroke-width="1.4" stroke-linecap="round"/>
+
+  <!-- Purple ninja energy -->
+  <path d="M5 49 Q24 58 40 47 T60 44"
+        fill="none" stroke="url(#energy)" stroke-width="3"
+        stroke-linecap="round"/>
+  <path d="M8 54 Q27 62 45 52"
+        fill="none" stroke="#c084fc" stroke-width="1.2"
+        stroke-linecap="round"/>
+
+  <!-- AnimeVerse A emblem -->
+  <path d="M32 34 L22 55 L29 52 L32 45 L35 52 L42 55 Z"
+        fill="url(#energy)" stroke="#fff" stroke-width=".8"
+        stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,278 @@
+
+.anime-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(ellipse at 50% 55%, #34105e 0%, #10091f 48%, #030207 100%);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.intro-skip {
+  position: absolute;
+  z-index: 10;
+  top: 24px;
+  right: 24px;
+  padding: 11px 16px;
+  color: white;
+  background: #1c122b;
+  border: 1px solid #a855f7;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.intro-skip:hover {
+  background: #7028c8;
+}
+
+.intro-skip span {
+  margin-left: 7px;
+}
+
+.intro-logo {
+  position: absolute;
+  z-index: 2;
+  top: 9%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #d68aff;
+  text-align: center;
+}
+
+.intro-logo h1 {
+  margin: 8px 0;
+  font-size: clamp(2.2rem, 7vw, 4.8rem);
+  font-weight: 1000;
+  letter-spacing: -2px;
+  text-shadow: 0 0 25px #a855f7;
+}
+
+.intro-logo h1 span {
+  color: #fff;
+}
+
+.intro-logo p {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+}
+
+.intro-mascot {
+  position: absolute;
+  top: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 250px;
+}
+
+.mascot-aura {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: #8b2cff;
+  border-radius: 50%;
+  filter: blur(65px);
+  opacity: 0.65;
+  animation: aura-pulse 1.3s ease-in-out infinite alternate;
+}
+
+.mascot-image {
+  position: relative;
+  z-index: 1;
+  width: 240px;
+  height: 280px;
+  object-fit: cover;
+  object-position: center 35%;
+  border-radius: 45%;
+  filter: drop-shadow(0 0 25px #bd68ff);
+  animation: mascot-float 1.2s ease-in-out infinite alternate;
+}
+
+.mascot-gesture {
+  position: absolute;
+  z-index: 2;
+  top: 20%;
+  right: -4%;
+  font-size: 3rem;
+  transform-origin: bottom center;
+}
+
+.mascot-name {
+  position: absolute;
+  bottom: 0;
+  padding: 5px 18px;
+  color: #fff;
+  background: #7928ca;
+  border: 2px solid #e9b6ff;
+  font-size: 0.8rem;
+  font-weight: 1000;
+  letter-spacing: 4px;
+  transform: skew(-8deg);
+}
+
+.intro-speech {
+  position: absolute;
+  bottom: 16%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 9px;
+  max-width: 90%;
+  padding: 14px 20px;
+  color: white;
+  background: #241238;
+  border: 2px solid #c084fc;
+  border-radius: 14px;
+  box-shadow: 0 0 25px #8426c766;
+  font-weight: 1000;
+  text-align: center;
+}
+
+.intro-speech span {
+  width: 100%;
+  color: #d9c7f2;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.intro-bottom {
+  position: absolute;
+  bottom: 5%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #d6b5ff;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.intro-dot {
+  width: 8px;
+  height: 8px;
+  background: #c084fc;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #c084fc;
+  animation: dot-blink 0.7s infinite alternate;
+}
+
+.intro-stars {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, #fff 1px, transparent 2px),
+    radial-gradient(circle, #b66cff 1px, transparent 2px);
+  background-position: 0 0, 40px 70px;
+  background-size: 90px 100px, 130px 150px;
+  opacity: 0.35;
+  animation: stars-drift 12s linear infinite;
+}
+
+.intro-energy {
+  position: absolute;
+  width: 150%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #a855f7, #60a5fa, transparent);
+  box-shadow: 0 0 20px #a855f7;
+  transform: rotate(-25deg);
+}
+
+.energy-one {
+  top: 45%;
+  animation: energy-pass 2s linear infinite;
+}
+
+.energy-two {
+  top: 60%;
+  animation: energy-pass 2.8s linear infinite reverse;
+}
+
+@keyframes mascot-float {
+  from { transform: translateY(0) rotate(-3deg); }
+  to { transform: translateY(-9px) rotate(3deg); }
+}
+
+@keyframes aura-pulse {
+  from { transform: scale(0.8); opacity: 0.35; }
+  to { transform: scale(1.2); opacity: 0.75; }
+}
+
+@keyframes stars-drift {
+  from { background-position: 0 0, 40px 70px; }
+  to { background-position: 0 200px, 40px 270px; }
+}
+
+@keyframes energy-pass {
+  from { translate: -30% 0; }
+  to { translate: 30% 0; }
+}
+
+@keyframes dot-blink {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .intro-logo {
+    top: 12%;
+  }
+
+  .intro-logo p {
+    font-size: 0.6rem;
+    letter-spacing: 1.5px;
+  }
+
+  .intro-mascot {
+    top: 32%;
+    transform: scale(0.85);
+  }
+
+  .intro-speech {
+    bottom: 15%;
+  }
+
+  .intro-bottom {
+    font-size: 0.57rem;
+    letter-spacing: 1px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-stars,
+  .intro-energy,
+  .mascot-aura,
+  .mascot-emoji,
+  .intro-dot {
+    animation: none !important;
+  }
+}
+
+.mascot-image {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 260px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center 35%;
+  border-radius: 20px;
+  filter: drop-shadow(0 0 25px #bd68ff);
+  animation: mascot-float 1.2s ease-in-out infinite alternate;
+}
+
+@media (max-width: 600px) {
+  .mascot-image {
+    width: 220px;
+    height: 260px;
+  }
+}
